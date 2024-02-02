@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Network</title>
+    <!-- Add your CSS stylesheets and other meta tags here -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/profile">My Profile</a></li>
+            <li><a href="/friends">Friends</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div id="main-content">
+        <!-- Display user's thoughts -->
+        <div id="user-thoughts">
+            <h2>My Thoughts</h2>
+            <!-- Display user's thoughts here -->
+            <!-- You can use JavaScript to dynamically load and display thoughts -->
+        </div>
+
+        <!-- Share a Thought Form -->
+        <div id="share-thought">
+            <h2>Share Your Thought</h2>
+            <form action="/post-thought" method="POST">
+                <textarea name="thought" placeholder="What's on your mind?"></textarea>
+                <button type="submit">Share</button>
+            </form>
+        </div>
+
+        <!-- Friend List -->
+        <div id="friend-list">
+            <h2>My Friends</h2>
+            <!-- Display user's friend list -->
+            <!-- You can use JavaScript to dynamically load and display friends -->
+        </div>
+    </div>
+
+    <!-- React to Thoughts Section -->
+    <div id="react-to-thoughts">
+        <h2>React to Friends' Thoughts</h2>
+        <!-- Display friends' thoughts and reactions -->
+        <!-- You can use JavaScript to dynamically load and display thoughts and reactions -->
+    </div>
+
+    <!-- Add your additional sections and components as needed -->
+
+    <!-- Add your JavaScript scripts at the end to enhance interactivity -->
+    <script src="main.js"></script>
+</body>
+</html>
