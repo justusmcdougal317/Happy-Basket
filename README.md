@@ -1,1 +1,1 @@
-# Happy-Basket
+Mission was to build a social media application where users can share their thoughts , react to friends thoughts and create a friend list. Express.js was used for routing and a MongoDB database was used for storing data as well as Mongoose ODM. I used java script to dictate the functionality of all buttons as well as coordinate routes for transferring data and rendering necesary pages. Html was used for structure of UI and style.css was used for esthetic of page.
