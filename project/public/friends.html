@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <!-- Add your CSS stylesheets and other meta tags here -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/profile">My Profile</a></li>
+            <li><a href="/friends">Friends</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div id="main-content">
+        <!-- Display user's friends -->
+        <h1>My Friends</h1>
+        <section id="friends-list">
+            <ul>
+                <li>Friend 1</li>
+                <li>Friend 2</li>
+                <!-- Add dynamic loading of friends using JavaScript if needed -->
+            </ul>
+        </section>
+
+        <!-- Add Friends Section -->
+        <section id="add-friends">
+            <h2>Add Friends</h2>
+            <!-- Add a form or input field for adding friends -->
+            <form action="/add-friend" method="POST">
+                <label for="friend-username">Friend's Username:</label>
+                <input type="text" id="friend-username" name="friend-username" required>
+                <button type="submit">Add Friend</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Add your JavaScript scripts at the end to enhance interactivity -->
+    <script src="main.js"></script>
+</body>
+</html>

@@ -4,17 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Network</title>
-    <!-- Add your CSS stylesheets and other meta tags here -->
+    <style>
+        body {
+            background-color: #4CAF50; /* Green background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure the full height of the viewport is covered */
+            margin: 0; /* Remove default margin */
+            flex-direction: column; /* Align children vertically */
+        }
+
+        /* Add your additional CSS styles here */
+
+        /* Example: Centering the main content in a container */
+        #main-content {
+            text-align: center;
+            background-color: #fff; /* White background color for the main content */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example shadow effect */
+            margin-top: 20px; /* Add some space from the top */
+        }
+
+        /* Add more styling for navigation, forms, etc. */
+        nav {
+            /* Your navigation styles here */
+            margin-bottom: 20px; /* Add some space from the bottom */
+        }
+
+        form {
+            /* Your form styles here */
+        }
+
+        #datetime {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Display Date and Time -->
+    <div id="datetime"></div>
 
     <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/profile">My Profile</a></li>
-            <li><a href="/friends">Friends</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/profile.html">My Profile</a></li>
+            <li><a href="/friends.html">Friends</a></li>
+            <li><a href="/logout.html">Logout</a></li>
         </ul>
     </nav>
 
@@ -23,15 +63,16 @@
         <!-- Display user's thoughts -->
         <div id="user-thoughts">
             <h2>My Thoughts</h2>
+            <ul id="thought-list">
             <!-- Display user's thoughts here -->
-            <!-- You can use JavaScript to dynamically load and display thoughts -->
+            <script src="thoughtController.js"></script>
         </div>
 
         <!-- Share a Thought Form -->
         <div id="share-thought">
             <h2>Share Your Thought</h2>
-            <form action="/post-thought" method="POST">
-                <textarea name="thought" placeholder="What's on your mind?"></textarea>
+            <form id="thought-form" action="/post-thought" method="POST">
+                <textarea name="thought" id="thought-input" placeholder="What's on your mind?"></textarea>
                 <button type="submit">Share</button>
             </form>
         </div>
@@ -40,7 +81,7 @@
         <div id="friend-list">
             <h2>My Friends</h2>
             <!-- Display user's friend list -->
-            <!-- You can use JavaScript to dynamically load and display friends -->
+            <script src="friendController.js"></script>
         </div>
     </div>
 
@@ -48,12 +89,28 @@
     <div id="react-to-thoughts">
         <h2>React to Friends' Thoughts</h2>
         <!-- Display friends' thoughts and reactions -->
-        <!-- You can use JavaScript to dynamically load and display thoughts and reactions -->
+        <script src="reactionController.js"></script>
     </div>
 
     <!-- Add your additional sections and components as needed -->
 
     <!-- Add your JavaScript scripts at the end to enhance interactivity -->
     <script src="main.js"></script>
+    <script>
+        // Function to update date and time
+        function updateDateTime() {
+            const datetimeElement = document.getElementById('datetime');
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            const formattedDateTime = now.toLocaleDateString('en-US', options);
+            datetimeElement.textContent = formattedDateTime;
+        }
+
+        // Update date and time initially
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>
